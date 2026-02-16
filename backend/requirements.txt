@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+google-api-python-client
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
+razorpay
+python-multipart
+cloudinary
