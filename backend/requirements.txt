@@ -9,3 +9,4 @@ google-auth-oauthlib
 razorpay
 python-multipart
 cloudinary
+pydantic-settings
