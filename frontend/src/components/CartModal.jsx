@@ -215,7 +215,7 @@ const CartModal = () => {
                                     className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none"
                                     value={formData.name}
                                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                                    placeholder="John Doe"
+                                    placeholder="Enter your name"
                                 />
                             </div>
                             <div>
@@ -226,10 +226,21 @@ const CartModal = () => {
                                     className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none"
                                     value={formData.phone}
                                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                                    placeholder="9876543210"
+                                    placeholder="Enter your phone number"
                                     maxLength={10}
                                 />
                                 <p className="text-xs text-gray-500 mt-1">Must be exactly 10 digits.</p>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                                <input
+                                    required
+                                    type="text"
+                                    className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none"
+                                    value={formData.department}
+                                    onChange={e => setFormData({ ...formData, department: e.target.value })}
+                                    placeholder="Enter your department"
+                                />
                             </div>
                         </form>
                     )}
