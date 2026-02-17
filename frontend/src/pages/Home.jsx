@@ -21,7 +21,6 @@ const Home = () => {
                     >
                         Order Now <ArrowRight size={20} />
                     </Link>
-                    <p className="mt-4 text-orange-100">For further queries contact us via WhatsApp on this number : 6379535155 (or) 9445473914</p>
                 </div>
 
                 {/* Decorative Circles */}
