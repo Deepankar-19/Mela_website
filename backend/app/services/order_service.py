@@ -35,6 +35,7 @@ def create_order_service(name, phone, items):
         token,
         name,
         phone,
+        "",  # Department (Column D)
         json.dumps(item_details),
         total_price,
         "awaiting_payment",
@@ -47,12 +48,12 @@ def create_order_service(name, phone, items):
 
 
 def submit_utr_service(token_number, utr_number):
-    orders = read_sheet("ORDERS!A2:I")
+    orders = read_sheet("ORDERS!A2:J")
 
     for index, row in enumerate(orders):
         if int(row[0]) == token_number:
             sheet_row = index + 2
 
-            update_sheet(f"ORDERS!G{sheet_row}", [[utr_number]])
-            update_sheet(f"ORDERS!F{sheet_row}", [["verification_pending"]])
+            update_sheet(f"ORDERS!H{sheet_row}", [[utr_number]])
+            update_sheet(f"ORDERS!G{sheet_row}", [["verification_pending"]])
             break
