@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.post("/orders/create")
 def create_order(order: OrderCreate):
-    token, total_price = create_order_service(order.name, order.phone, order.items)
+    token, total_price = create_order_service(order.name, order.phone, order.department, order.items)
 
     upi_link = f"upi://pay?pa={settings.UPI_ID}&pn={settings.UPI_NAME}&am={total_price}&cu=INR"
 

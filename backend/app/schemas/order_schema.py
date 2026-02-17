@@ -5,6 +5,7 @@ from typing import Dict
 class OrderCreate(BaseModel):
     name: str
     phone: str
+    department: str
     items: Dict[str, int]
 
 

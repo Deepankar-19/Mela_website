@@ -12,7 +12,7 @@ def generate_token():
     return new
 
 
-def create_order_service(name, phone, items):
+def create_order_service(name, phone, department, items):
     total_price = 0
     item_details = []
 
@@ -35,7 +35,7 @@ def create_order_service(name, phone, items):
         token,
         name,
         phone,
-        "",  # Department (Column D)
+        department,  # Department (Column D)
         json.dumps(item_details),
         total_price,
         "awaiting_payment",
