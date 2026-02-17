@@ -127,7 +127,7 @@ const CartModal = () => {
                         {step === 'cart' && 'Your Cart'}
                         {step === 'details' && 'Enter Details'}
                         {step === 'payment' && 'Make Payment'}
-                        {step === 'success' && 'Order Confirmed'}
+                        {step === 'success' && 'Order Placed'}
                     </h2>
                     <button onClick={handleClose} className="p-2 hover:bg-gray-200 rounded-full transition">
                         <X size={20} />
