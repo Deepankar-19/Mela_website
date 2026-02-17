@@ -18,14 +18,16 @@ const Footer = () => {
                 </a>
                 <br />
                 <a
-                    href="tel:6379535155"
+                    href="tel:6379535155 or 9342043464"
                     className="flex justify-center items-center gap-2 hover:text-green-500 transition duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <MessageCircle size={24} />
-                    <span>For queries : 6379535155</span>
+                    <span>For queries : 6379535155 / 9342043464</span>
                 </a>
+                <br />
+
             </div>
         </footer>
     );
