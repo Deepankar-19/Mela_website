@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Trash2, Plus, Minus, ArrowRight, Copy, CheckCircle, Upload, Image as ImageIcon } from 'lucide-react';
+import { X, Trash2, Plus, Minus, ArrowRight, Copy, CheckCircle, Upload, Image as ImageIcon, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { createOrder, submitUTR, uploadPaymentScreenshot } from '../services/api';
 import toast from 'react-hot-toast';
@@ -139,7 +139,7 @@ const CartModal = () => {
                         <>
                             {Object.values(cart).length === 0 ? (
                                 <div className="flex flex-col items-center justify-center h-full text-gray-500">
-                                    <ShoppingCartIcon />
+                                    <ShoppingCart />
                                     <p className="mt-4">Your cart is empty</p>
                                     <button
                                         onClick={handleClose}
