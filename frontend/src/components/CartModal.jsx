@@ -8,7 +8,7 @@ import scanner from '../assets/af97f9f3-a8df-4c86-a2c7-c445ff44cbab.jpg';
 const CartModal = () => {
     const { cart, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
     const [step, setStep] = useState('cart'); // cart, details, payment, success
-    const [formData, setFormData] = useState({ name: '', phone: '' });
+    const [formData, setFormData] = useState({ name: '', phone: '', department: '' });
     const [orderResponse, setOrderResponse] = useState(null);
     const [paymentMethod, setPaymentMethod] = useState('utr'); // 'utr' or 'screenshot'
     const [utrNumber, setUtrNumber] = useState('');
@@ -26,7 +26,7 @@ const CartModal = () => {
             setOrderResponse(null);
             setUtrNumber('');
             setScreenshotFile(null);
-            setFormData({ name: '', phone: '' });
+            setFormData({ name: '', phone: '', department: '' });
         }
     };
 
@@ -45,6 +45,11 @@ const CartModal = () => {
         const phoneRegex = /^\d{10}$/;
         if (!phoneRegex.test(formData.phone)) {
             toast.error('Please enter a valid 10-digit phone number.');
+            return;
+        }
+
+        if (!formData.department.trim()) {
+            toast.error('Please enter your department.');
             return;
         }
 
@@ -74,6 +79,7 @@ const CartModal = () => {
             const orderData = await createOrder({
                 name: formData.name,
                 phone: formData.phone,
+                department: formData.department,
                 items: items
             });
 
@@ -215,7 +221,7 @@ const CartModal = () => {
                                     className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none"
                                     value={formData.name}
                                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                                    placeholder="Enter your name"
+                                    placeholder="Enter your full name"
                                 />
                             </div>
                             <div>
