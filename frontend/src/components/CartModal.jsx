@@ -58,13 +58,12 @@ const CartModal = () => {
 
     const handlePaymentAndOrder = async (e) => {
         e.preventDefault();
-
-        if (paymentMethod === 'utr' && !utrNumber) {
-            toast.error('Please enter the UTR number.');
-            return;
-        }
         if (paymentMethod === 'screenshot' && !screenshotFile) {
             toast.error('Please upload a payment screenshot.');
+            return;
+        }
+        if (paymentMethod === 'utr' && !utrNumber) {
+            toast.error('Please enter the UTR number.');
             return;
         }
 
